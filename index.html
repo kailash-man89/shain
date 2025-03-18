@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kailash S - Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (for icons) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #84a6e9;
+        }
+
+        /* Section Styles */
+        .section-content {
+            background: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 900px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e1e1e;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* Skills Section */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #1e1e1e;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .skill-item:hover {
+            background: #84a6e9;
+            cursor: pointer;
+        }
+
+        /* Projects Section */
+        .project-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .project-item img {
+            width: 90px;
+            height: 90px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .project-item p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .project-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .project-item a:hover {
+            color: #84a6e9;
+        }
+
+        /* Resume Button */
+        .download-button {
+            display: block;
+            text-align: center;
+            background: #1e1e1e;
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            width: 200px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .download-button:hover {
+            background: #333;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode {
+            background: #1e1e1e;
+            color: white;
+        }
+
+        .dark-mode .section-content {
+            background: #333;
+            color: white;
+        }
+
+        .dark-mode nav {
+            background: black;
+        }
+
+        .dark-mode .download-button {
+            background: #555;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .skills-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+
+    <!-- Header Section -->
+    <header>
+        <img src="https://tse2.mm.bing.net/th?id=OIP.exl0whWFi6ewLdhB-5BBWQHaEK&pid=Api&P=0&h=180" alt="Kailash S" class="profile-picture">
+        <div class="header-content">
+            <h1>Kailash S</h1>
+            <p>Web Developer | Backend Specialist | Cyber Security Enthusiast</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-content">
+            <h2>About Me</h2>
+            <p>I am a passionate <strong>Web Developer</strong> with a focus on backend technologies. I have experience in developing scalable web applications and APIs using various technologies like <strong>Node.js, PHP, and Python</strong>. My main goal is to build efficient and secure backend systems that power seamless user experiences. Additionally, I have a strong background in <strong>Cyber Security</strong>, which allows me to implement robust security practices throughout my development process.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-content">
+            <h2>Education</h2>
+            <p>Madras University - BCA (Bachelor of Computer Applications)</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-content">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-item">🔒 CyberSecurity</span>
+                <span class="skill-item">💻 Web Development</span>
+                <span class="skill-item">☁️ Cloud Computing</span>
+                <span class="skill-item">🐍 Python</span>
+                <span class="skill-item">💻 Node.js</span>
+                <span class="skill-item">⚡ Backend Development</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-content">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <img src="https://tse3.mm.bing.net/th?id=OIP._lz1MEi05R6yQoUE1xAueAHaE8&pid=Api&P=0&h=180" alt="AI Project">
+                <p><a href="#">AI-Based Alternator Control</a></p>
+            </div>
+            <!-- Add more projects here -->
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="section-content">
+            <h2>Resume</h2>
+            <p>You can download my resume here:</p>
+            <a href="kailash.pdf " class="download-button" download>Download CV</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kailash S</p>z
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>
